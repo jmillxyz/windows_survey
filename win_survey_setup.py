@@ -1,4 +1,10 @@
 from distutils.core import setup
-import py2exe
+import py2exe, sys, os
 
-setup(console=['win_survey_script.py'])
+sys.argv.append('py2exe')
+
+setup (
+    options = {'py2exe': {'bundle_files':1 }},
+    windows = [{'script': "win_survey_script.py"}],
+    zipfile = None,
+)
